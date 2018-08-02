@@ -565,7 +565,7 @@ function createPsliders(){
 			params.SliderPInputs[p] = [params.SliderPmax[p]];
 			params.SliderPInputs[p][0].parent = params.SliderP[p];
 			min = 0.;
-			max = 1.;
+			max = params.PsizeMult[p];
 
 			noUiSlider.create(params.SliderP[p], {
 				start: [params.PsizeMult[p]],
@@ -1652,8 +1652,11 @@ function createUI(){
 					.style('margin','0')
 					.style('border','1px solid #909090')
 
-				var selectF = dropdown.append('div')
-					.attr('style','margin:0px;  padding:5px; height:20px')
+				var filterDiv = dropdown.append('div')
+					.attr('style','margin:0px; padding:5px; height:40px');
+
+				var selectF = filterDiv.append('div')
+					.attr('style','height:20px')
 					.html('Filters &nbsp')	
 
 					.append('select')
@@ -1673,7 +1676,7 @@ function createUI(){
 					if (params.parts[d][fk] != null){
 
 
-						dfilters = dropdown.append('div')
+						dfilters = filterDiv.append('div')
 							.attr('id',d+'_FK_'+fk+'_END_Filter')
 							.attr('class','FilterClass')
 
