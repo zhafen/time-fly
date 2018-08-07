@@ -11,7 +11,7 @@ There are four origins for material in the CGM at z=0.25:
 
 Further details can be found in Hafen et al., in prep.
 
-All distances are in proper kpc relative to the central galaxy, and a ruler (100 kpc on a side with 1 kpc spacing between points) is shown in white. The position of stars at z=0.25 are shown in yellow. Clicking on the downward arrow next to a classification allows one to filter the data according to a variety of options.
+All distances are in proper kpc relative to the central galaxy, and a ruler (100 kpc on a side with 1 kpc spacing between points) is shown in white. At z=0.25 CGM is defined here as 0.1-1 times the virial radius. The position of stars at z=0.25 are shown in yellow. Clicking on the downward arrow next to a classification allows one to filter the data according to a variety of options.
 
 We show the worldlines of 50 particles per origin, sampled randomly. Fewer worldlines can be displayed using the ParticleID option when filtering.
 
