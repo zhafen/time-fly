@@ -66,13 +66,23 @@ function update(time){
 	var currentTime = new Date();
 	var seconds = currentTime.getTime()/1000;
 	
+<<<<<<< HEAD
+	// //console.log((seconds-params.currentTime))
+	// // if we spent more than 1.5 seconds drawing the last frame crash the app
+	// if ( (seconds-params.currentTime) > 1.5){
+	// 	console.log("Crashing the app, taking too long!",(seconds-params.currentTime))
+	// 	params.pauseAnimation=true;
+	// 	showCrash();
+	// }
+=======
 	//console.log((seconds-params.currentTime))
-	// if we spent more than 1.5 seconds drawing the last frame crash the app
+	// if we spent more than 1.5 seconds drawing the last frame, send the app to sleep
 	if ( (seconds-params.currentTime) > 1.5){
-		console.log("Crashing the app, taking too long!",(seconds-params.currentTime))
+		console.log("Putting the app to sleep, taking too long!",(seconds-params.currentTime))
 		params.pauseAnimation=true;
-		showCrash();
+		showSleep();
 	}
+>>>>>>> 3dc2fac15c4ca455ccd1c0a6a04afcd7763c9c02
 
 	for (var i=0; i<params.partsKeys.length; i++){
 		var p = params.partsKeys[i];
@@ -139,26 +149,17 @@ function update(time){
 				if (params.updateFilter[p] || params.updateOnOff[p]){
 					var radiusScale = m.geometry.attributes.radiusScale.array;
 					var alpha = m.geometry.attributes.alpha.array;
-<<<<<<< HEAD
 					var fk;
-=======
->>>>>>> ddecd5e2db2b1a80fe208974760a4115baea8305
 					for( var ii = 0; ii < radiusScale.length; ii ++ ) {
 						radiusScale[ii] = 1.;
 						alpha[ii] = 1.;
 						if (params.updateFilter[p]){
 							for (k=0; k<params.fkeys[p].length; k++){
-<<<<<<< HEAD
 								fk = params.fkeys[p][k];
 								if (params.parts[p][fk] != null) {
 									val = params.parts[p][fk][ii]; 
 									//if ( val < params.filterVals[p][fk][0] || val > params.filterVals[p][fk][1] ){
 									if ( (!params.invertFilter[p][fk] && (val < params.filterVals[p][fk][0] || val > params.filterVals[p][fk][1])) || ( (params.invertFilter[p][fk] && (val > params.filterVals[p][fk][0] && val < params.filterVals[p][fk][1])))   ){
-=======
-								if (params.parts[p][params.fkeys[p][k]] != null) {
-									val = params.parts[p][params.fkeys[p][k]][ii]; 
-									if ( val < params.filterVals[p][params.fkeys[p][k]][0] || val > params.filterVals[p][params.fkeys[p][k]][1] ){
->>>>>>> ddecd5e2db2b1a80fe208974760a4115baea8305
 										radiusScale[ii] = 0.;
 										alpha[ii] = 0.;
 									} 
@@ -180,10 +181,7 @@ function update(time){
 					radiusScale[ii] = 0.;
 				}
 				m.geometry.attributes.radiusScale.needsUpdate = true;
-<<<<<<< HEAD
 				params.updateOnOff[p] = false;
-=======
->>>>>>> ddecd5e2db2b1a80fe208974760a4115baea8305
 			}
 
 		});
